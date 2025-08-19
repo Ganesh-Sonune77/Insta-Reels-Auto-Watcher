@@ -2,7 +2,7 @@
 
 A Flask web app to automate Instagram Reel watching using Selenium and TOR for privacy and IP rotation.
 
-## Features
+## ✨ Features
 
 - Watch any Instagram Reel on multiple virtual screens (browser sessions)
 - Optionally auto-like reels
@@ -10,7 +10,7 @@ A Flask web app to automate Instagram Reel watching using Selenium and TOR for p
 - Live status logs and screenshots
 - Save logs for later review
 
-## Requirements
+## 🛠 Requirements
 
 - Python 3.10+
 - Google Chrome browser
@@ -18,7 +18,7 @@ A Flask web app to automate Instagram Reel watching using Selenium and TOR for p
 - [TOR Expert Bundle](https://www.torproject.org/download/tor/)
 - All Python dependencies in `requirements.txt`
 
-## Setup
+## ⚙ Setup
 
 1. **Install Python dependencies:**
    ```sh
