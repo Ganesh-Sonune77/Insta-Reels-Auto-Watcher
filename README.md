@@ -1,4 +1,4 @@
-# Instagram Reel Watcher
+📺 # Instagram Reel Watcher
 
 A Flask web app to automate Instagram Reel watching using Selenium and TOR for privacy and IP rotation.
 
