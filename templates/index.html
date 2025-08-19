@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Reel Watcher</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Instagram Reel Watcher</h1>
+    <form action="/start" method="POST">
+      <label>Paste your video link:</label>
+      <input type="url" name="video_link" required placeholder="https://www.instagram.com/reel/xyz/">
+
+      <label>Select screen quantity:</label>
+      <input type="number" name="screen_count" min="1" max="10" required>
+
+      <label>Likes ON or OFF:</label>
+      <select name="like_option">
+        <option value="on">ON</option>
+        <option value="off">OFF</option>
+      </select>
+
+      <button type="submit">Start Watching</button>
+    </form>
+
+    <div class="status-section">
+      <h2>Live Watch Status</h2>
+      <div id="logContainer"></div>
+    </div>
+  </div>
+
+  <script>
+    function fetchLogs() {
+      fetch('/status')
+        .then(res => res.json())
+        .then(data => {
+          let html = '';
+          for (const [screen, logs] of Object.entries(data)) {
+            html += `<div class="log-box"><h3>Screen ${screen}</h3><ul>`;
+            logs.slice(-5).forEach(log => {
+              html += `<li>${log}</li>`;
+            });
+            html += '</ul></div>';
+          }
+          document.getElementById('logContainer').innerHTML = html;
+        });
+    }
+
+    setInterval(fetchLogs, 3000);
+  </script>
+</body>
+</html>
